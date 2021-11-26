@@ -11,46 +11,7 @@
       <v-icon>mdi-battery</v-icon>
       <span>{{ new Date().getDate() }}/{{ new Date().getMonth()}}/{{ new Date().getFullYear()}}</span>
     </v-system-bar>
-  <v-navigation-drawer
-    app
-    permanent
-    color="blue-grey darken-4"
-    dark
-   >
-      <v-list-item>
-        <img style="border-radius:50%; width:70px; margin-right:15px" src="https://media-exp1.licdn.com/dms/image/C4D03AQFpjHT89vw4QQ/profile-displayphoto-shrink_100_100/0/1611660323437?e=1642636800&v=beta&t=gg4hJIonjX9DJzkbvmg9xBUhzoN_Cd1APjuddM_AcUE">
-        <v-list-item-content>
-          <v-list-item-title class="text-h6">
-            Thiago
-          </v-list-item-title>
-          <v-list-item-subtitle>
-            Estudante FACENS
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
-
-      <v-divider></v-divider>
-
-      <v-list
-        dense
-        nav
-      >
-        <v-list-item
-          v-for="item in items"
-          :key="item.title"
-          link
-        >
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <br>
-      </v-list>
-    </v-navigation-drawer>
+ <NavigationDrawer></NavigationDrawer>
     <v-subheader>Light status bar</v-subheader>
     
  <v-app-bar
@@ -60,8 +21,7 @@
       dark
     >
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-      <v-toolbar-title>Pagina inicial</v-toolbar-title>
+      <v-toolbar-title>{{title}}</v-toolbar-title>
       <v-spacer></v-spacer>
 
       <v-btn icon>
@@ -85,7 +45,6 @@
             <v-icon>mdi-dots-vertical</v-icon>
           </v-btn>
         </template>
-
         <v-list>
           <v-list-item
             v-for="n in 5"
@@ -101,8 +60,36 @@
 
     <!-- Provides the application the proper gutter -->
     <v-container 
-    fluid>
-  <v-parallax src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg">
+    >
+    <v-card
+    align="center"
+    >
+    
+      <h1 class="text-h4 font-weight-thin mb-4">
+          Olá!
+        </h1>
+        <h4 class="subheading">
+          <a style=" color: inherit" href="https://github.com/thisanches07">link para meu GitHub!</a>
+        </h4>
+        <v-alert>
+      Aqui estão algumas tecnologias que já tive contato:
+    </v-alert>
+    </v-card>
+     <v-row>
+      <v-col
+        v-for="(data,i) in myCards"
+        :key="i"
+        cols="12"
+        sm="6"
+        md="4"
+        xs="2"
+      >
+        <MyCard :cardid="i" :cardInfo="data"/>
+      </v-col>
+    </v-row>
+  
+  
+
   <v-row
       align="center"
       justify="center"
@@ -111,15 +98,8 @@
         class="text-center"
         cols="12"
       >
-        <h1 class="text-h4 font-weight-thin mb-4">
-          Olá!
-        </h1>
-        <h4 class="subheading">
-          <a style=" color: inherit" href="https://github.com/thisanches07">link para meu GitHub!</a>
-        </h4>
       </v-col>
     </v-row>
-  </v-parallax>
     </v-container>
   </v-main>
 
@@ -140,51 +120,35 @@
         </v-card-text>
       </v-card>
     </v-footer>
-<v-bottom-navigation 
-app
-dark
-v-model="value">
-    <v-btn value="recent">
-      <span>Recentes</span>
-
-      <v-icon>mdi-history</v-icon>
-    </v-btn>
-
-    <v-btn value="favorites">
-      <span>Favoritos</span>
-
-      <v-icon>mdi-heart</v-icon>
-    </v-btn>
-
-    <v-btn value="nearby">
-      <span>Localização</span>
-
-      <v-icon>mdi-map-marker</v-icon>
-    </v-btn>
-  </v-bottom-navigation>
+<BottomNavigation></BottomNavigation>
 </v-app>
 </template>
 
 <script>
+
+  import NavigationDrawer from '@/components/NavigationDrawer'
+  import BottomNavigation from '@/components/BottomNavigation'
+  import MyCard from '@/components/MyCard' 
+
   export default {
-    data () {
+    components:{
+      NavigationDrawer,
+      BottomNavigation,
+      MyCard
+    },
+    data () { 
       return {
-        value: 1,
-        items: [
-          { title: 'Configurações', icon: 'mdi-view-dashboard' },
-          { title: 'Fotos', icon: 'mdi-image' },
-          { title: 'Sobre mim', icon: 'mdi-help-box' },
-        ],
-        right: null,
-         links: [
-        'Home',
-        'Sobre mim',
-        'Tecnologias',
-        'Experiência',
-        'Redes Sociais',
-        'Contato',
-        ],
+       titleView:this.$store.state.cards
+        
       }
     },
+    computed:{
+      myCards(){
+        return this.$store.state.cards
+      },
+      title(){
+        return this.$store.getters.bigTitle
+      }
+    }
   }
 </script>

@@ -18,7 +18,7 @@
       contain
   />
 
-    <v-card-title>{{cardInfo.title}}</v-card-title>
+    <v-card-title class="justify-center">{{cardInfo.title}}</v-card-title>
     <v-card-subtitle>{{cardInfo.level}}</v-card-subtitle>
     <v-card-text
     >{{cardInfo.alreadyWorked}}</v-card-text>

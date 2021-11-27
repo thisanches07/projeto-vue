@@ -2,7 +2,9 @@
 <v-app>
   <Toolbar :items ="items"/>
   <NavigationDrawer :items ="items"/>
-  <Main/>
+  <v-main>
+    <router-view></router-view>
+  </v-main>
   <Footer/>
   <BottomNavigation :items="items"/>
 </v-app>
@@ -14,12 +16,10 @@
   import BottomNavigation from '@/components/BottomNavigation'
   import Toolbar from '@/components/Toolbar'
   import Footer from '@/components/Footer'
-  import Main from '@/components/Main'
 
   export default {
     components:{
       NavigationDrawer,
-      Main,
       BottomNavigation,
       Toolbar,
       Footer
@@ -30,16 +30,16 @@
       return {
         items: [
       {
-        title: "Principal",
-        address: "/Principal",
+        title: "Home",
+        address: "/Home",
       },
       {
-        title: "Sobre mim",
-        address: "/SobreMim",
+        title: "Experiência",
+        address: "/Experiencia",
       },
       {
-        title: "Tecnologias",
-        address: "/Tecnologias",
+        title: "Interesses",
+        address: "/Interesses",
       },
       {
         title: "Cursos",

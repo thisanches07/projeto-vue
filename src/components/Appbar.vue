@@ -6,7 +6,7 @@
       dark
     >
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
-      <v-toolbar-title>{{title}}</v-toolbar-title>
+      <v-toolbar-title>Minhas informações</v-toolbar-title>
         <v-spacer></v-spacer>
       <v-toolbar-items>
     
@@ -23,11 +23,5 @@
 <script>
 export default {
     props: ["items"],
-    computed:{
-    
-      title(){
-        return this.$store.getters.bigTitle
-      }
-    }
   }
 </script>

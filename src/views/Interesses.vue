@@ -1,45 +1,15 @@
 <template>
     <!-- Provides the application the proper gutter -->
     <v-container>
-      <v-card align="center">
+    <v-card align="center">
 
         <h1 class="text-h4 font-weight-thin mb-4">
-          Cursos que já finalizei!
+          Áreas que tenho muito interesse em conhecer!
         </h1>
     
      <v-row>
       <v-col
-        v-for="(data,i) in myCourses"
-        :key="i"
-        cols="12"
-        sm="6"
-        md="4"
-        xs="2"
-      >
-        <SimpleCard :cardid="i" :cardInfo="data"/>
-
-      </v-col>
-    </v-row>
-  
-  
-
-  <v-row
-      align="center"
-      justify="center"
-    >
-      <v-col
-        class="text-center"
-        cols="12"
-      >
-      </v-col>
-    </v-row>
-    <h1 class="text-h4 font-weight-thin mb-4">
-          Plataformas que utilizo para estudos!
-        </h1>
-    
-     <v-row>
-      <v-col
-        v-for="(data,i) in myStudies"
+        v-for="(data,i) in myCards"
         :key="i"
         cols="12"
         sm="6"
@@ -64,7 +34,6 @@
       </v-col>
     </v-row>
     </v-card>
-    
     </v-container>
   </template>
 <script>
@@ -80,11 +49,8 @@
       }
     },
     computed:{
-      myStudies(){
-        return this.$store.state.studies
-      },
-      myCourses(){
-        return this.$store.state.courses
+      myCards(){
+        return this.$store.state.interests
       },
       title(){
         return this.$store.getters.bigTitle

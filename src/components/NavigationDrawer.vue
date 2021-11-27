@@ -24,12 +24,13 @@
         nav
       >
         <v-list-item
-          v-for="item in items"
-          :key="item.title"
+          v-for="(item, i) in items" 
+          :key="i"
           link
+          @click="$router.push(item.address)"
         >
           <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
+            <!-- <v-icon>{{ item.icon }}</v-icon> -->
           </v-list-item-icon>
 
           <v-list-item-content>
@@ -44,26 +45,9 @@
 <script>
 
   export default {
-   
+   props: ["items"],
     data () {
-      return {
-        value: 1,
-        items: [
-          { title: 'Configurações', icon: 'mdi-view-dashboard' },
-          { title: 'Fotos', icon: 'mdi-image' },
-          { title: 'Sobre mim', icon: 'mdi-help-box' },
-          { title: 'Tecnologias', icon: 'mdi-view-dashboard' },
-        ],
-        right: null,
-         links: [
-        'Home',
-        'Tecnologias',
-        'Sobre mim',
-        'Experiência',
-        'Redes Sociais',
-        'Contato',
-        ],
-      }
+
     },
   }
 </script>

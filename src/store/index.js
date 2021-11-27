@@ -14,7 +14,7 @@ export default new Vuex.Store({
       {title:"Python",level:"Básico",alreadyWorked:"Gostaria de trabalhar",image:"https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"},
       {title:"Git",level:"Intermediário",alreadyWorked:"Trabalho atualmente",image:"https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg"},
       {title:"JIRA",level:"Intermediário",alreadyWorked:"Já trabalhei",image:"https://cdn.worldvectorlogo.com/logos/jira-1.svg"},
-      {title:"C#",level:"Básico",alreadyWorked:"Nunca trabalhei trabalhei",image:"https://cdn.icon-icons.com/icons2/2415/PNG/512/csharp_original_logo_icon_146578.png"},
+      {title:"C#",level:"Básico",alreadyWorked:"Nunca trabalhei",image:"https://cdn.icon-icons.com/icons2/2415/PNG/512/csharp_original_logo_icon_146578.png"}
     ],
     title: "Tecnologias"
   },

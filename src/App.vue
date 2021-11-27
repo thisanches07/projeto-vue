@@ -2,9 +2,9 @@
 <v-app>
   <Toolbar :items ="items"/>
   <NavigationDrawer :items ="items"/>
-  <v-content>
+  <v-main>
     <router-view></router-view>
-  </v-content>
+  </v-main>
   <Footer/>
   <BottomNavigation :items="items"/>
 </v-app>

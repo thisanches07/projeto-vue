@@ -15,11 +15,6 @@ const routes = [
     component: Home
   },
   {
-    path: '/Home',
-    name: 'Home',
-    component: Home
-  },
-  {
     path: '/Experiencia',
     name: 'Experiencia',
     component: Experiencia

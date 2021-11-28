@@ -31,7 +31,7 @@
         items: [
       {
         title: "Home",
-        address: "/Home",
+        address: "/",
       },
       {
         title: "Experiência",

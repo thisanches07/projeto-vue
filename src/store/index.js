@@ -1,8 +1,17 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import axios from 'axios'
 Vue.use(Vuex)
 
+const options = {
+  method: 'GET',
+  url: 'https://community-open-weather-map.p.rapidapi.com/climate/month',
+  params: {q: 'San Francisco'},
+  headers: {
+    'x-rapidapi-host': 'community-open-weather-map.p.rapidapi.com',
+    'x-rapidapi-key': 'd2e9597385mshd77281114593db3p156c6ajsnc7084f33bb82'
+  }
+};
 export default new Vuex.Store({
   state: {
     cards:[
@@ -52,11 +61,23 @@ export default new Vuex.Store({
     ],
 
 
-    title: "Tecnologias"
+    title: "Utilizando dados de uma API externa",
+    weatherGroup:[],
   },
   mutations: {
+    SET_WEATHERGROUP(state,payload){
+      state.weatherGroup=payload
+    }
   },
   actions: {
+    fetchWeatherGroup({commit}){
+      axios.request(options)
+      .then(res=>{ 
+        const payload = res.data.list
+        commit('SET_WEATHERGROUP',payload)
+        })
+      .catch(err=> {console.error(err)})
+    }
   },
   getters: {
     bigTitle(state){

@@ -45,6 +45,10 @@
         title: "Cursos",
         address: "/Cursos",
       },
+      {
+        title: "Estudando atualmente",
+        address: "/ApiExterna",
+      },
     ],
        titleView:this.$store.state.cards
         

@@ -4,7 +4,7 @@ import Home from '../views/Home.vue'
 import Cursos from '../views/Cursos.vue'
 import Experiencia from '../views/Experiencia.vue'
 import Interesses from '../views/Interesses.vue'
-
+import ApiExterna from '../views/ApiExterna'
 
 Vue.use(VueRouter)
 
@@ -28,6 +28,11 @@ const routes = [
     path: '/Cursos',
     name: 'Cursos',
     component: Cursos
+  },
+  {
+    path: '/ApiExterna',
+    name: 'ApiExterna',
+    component: ApiExterna
   },
 ]
 

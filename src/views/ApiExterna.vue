@@ -7,7 +7,7 @@
       {{title}}
       </h1>
       <h1 class="text-h4 font-weight-thin mb-4">
-          Informações sobre o clima de São Francisco dos ultimos 30 dias
+          Informações sobre o clima de São Francisco dos últimos 30 dias
         </h1>
     <v-container 
     >

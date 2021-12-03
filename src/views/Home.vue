@@ -4,7 +4,6 @@
     align="center"
     >
     <h1>{{events}}</h1>
-    <v-btn @click="fetch()"> FETCH SOMETHING</v-btn>
       <h1 class="text-h4 font-weight-thin mb-4">
           Olá!
         </h1>

@@ -40,4 +40,10 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## (/Cursos)
 ![image](https://user-images.githubusercontent.com/70613241/143783434-31e220f3-e27d-4954-88bc-ec1e01ba342c.png)
 
+# AF3
+## API externa: https://rapidapi.com/community/api/open-weather-map/
+
+## URL que utiliza a API (/ApiExterna)
+![image](https://user-images.githubusercontent.com/70613241/144532270-38665676-aef5-452d-ba02-b7dfe6c12671.png)
+
 

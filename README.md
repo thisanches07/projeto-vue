@@ -44,6 +44,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## API externa: https://rapidapi.com/community/api/open-weather-map/
 
 ## URL que utiliza a API (/ApiExterna)
+### Nesse endpoint são utilizados: getter, mutations, actions, axios e uma API externa
 ![image](https://user-images.githubusercontent.com/70613241/144532270-38665676-aef5-452d-ba02-b7dfe6c12671.png)
 
 

@@ -3,7 +3,6 @@
 <v-card
     align="center"
     >
-    <h1>{{events}}</h1>
       <h1 class="text-h4 font-weight-thin mb-4">
           Olá!
         </h1>
@@ -48,7 +47,6 @@
 
 <script>
       import MyCard from '@/components/MyCard'
-      import axios from 'axios'
       
   export default {
     name: 'Home',
@@ -59,7 +57,6 @@
      data () { 
       return {
        titleView:this.$store.state.cards,
-      events:null,
       }
     },
     computed:{
@@ -70,18 +67,6 @@
         return this.$store.getters.bigTitle
       }
     },
-    methods:{
-      fetch(){
-        
-        console.log('aqui')
-        axios.get('https://agenda-balaguer.herokuapp.com/api/event')
-        .then(res=>{
-        console.log(res.data.values)
-        this.events=res.data.values;
-        })
-        .catch(err=>console.log(err))
-      }
-    }
 
   }
 </script>
